@@ -1,0 +1,45 @@
+# ════════════════════════════════════════════════════════════
+# 1. ENFORCE HTTPS & NON-WWW
+# ════════════════════════════════════════════════════════════
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ https://stampdutycalc.in/$1 [L,R=301]
+
+# ════════════════════════════════════════════════════════════
+# 2. ENABLE GZIP COMPRESSION
+# ════════════════════════════════════════════════════════════
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json
+</IfModule>
+
+# ════════════════════════════════════════════════════════════
+# 3. LEVERAGE BROWSER CACHING
+# ════════════════════════════════════════════════════════════
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Cache CSS and JavaScript for 1 month
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    
+    # Cache Images for 1 year
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # Default cache fallback
+    ExpiresDefault "access plus 2 days"
+</IfModule>
+
+# ════════════════════════════════════════════════════════════
+# 4. SECURITY HEADERS
+# ════════════════════════════════════════════════════════════
+<IfModule mod_headers.c>
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>

@@ -1,0 +1,171 @@
+/**
+ * Maharashtra Stamp Duty Calculator - Page Styles & Overrides
+ * Scoped styling for state-specific components and clean layout rules.
+ */
+
+/* ==========================================================================
+   Typography & Localization Overrides
+   ========================================================================== */
+body.lang-mr {
+  font-family: 'Noto Sans Devanagari', var(--font-base, system-ui, -apple-system, sans-serif);
+}
+
+body.lang-mr .hero-h1,
+body.lang-mr .card-header h2,
+body.lang-mr .result-label {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  letter-spacing: normal;
+}
+
+/* ==========================================================================
+   State Selector Dropdown
+   ========================================================================== */
+.state-selector-container {
+  margin: 1rem auto;
+  max-width: 280px;
+}
+
+.state-selector {
+  width: 100%;
+  height: 40px;
+  font-size: 0.9rem;
+  background-color: var(--white, #ffffff);
+  border: 2px solid var(--gold, #c4922a);
+  border-radius: 8px;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.state-selector:focus {
+  box-shadow: 0 0 0 3px rgba(196, 146, 42, 0.25);
+}
+
+/* ==========================================================================
+   Breadcrumb City Tier
+   ========================================================================== */
+#breadcrumbCity {
+  display: none;
+}
+
+/* ==========================================================================
+   Header and Card Icons
+   ========================================================================== */
+.calc-header-icon {
+  font-size: 1.1rem;
+}
+
+/* Tooltip adjustment */
+.tooltip-wrap {
+  margin-left: 2px;
+}
+
+.tooltip-popup.tooltip-align-right {
+  width: 220px;
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+/* ==========================================================================
+   Results Breakdown Details
+   ========================================================================== */
+#row-metro,
+#row-lbt {
+  display: none;
+}
+
+#resGenderRebate {
+  color: #15803d;
+  font-weight: 700;
+}
+
+#seoContextBox {
+  font-size: 0.74rem;
+  color: var(--muted, #64748b);
+  line-height: 1.6;
+  padding: 0 1.25rem 0.9rem;
+  display: none;
+}
+
+#seoCtxMetroCess {
+  margin-top: 0.4rem;
+  display: none;
+}
+
+/* ==========================================================================
+   Sidebar Quick Reference Widget
+   ========================================================================== */
+.sidebar-rate-reference {
+  padding: 1rem 1.25rem;
+}
+
+.sidebar-rate-heading {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted, #64748b);
+  margin-bottom: 0.65rem;
+}
+
+.sidebar-rate-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.sidebar-rate-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  padding: 0.45rem 0.65rem;
+  background: var(--cream, #fdfbf7);
+  border-radius: 6px;
+}
+
+.sidebar-rate-row.rebate-row {
+  background: #fff5e0;
+  border-radius: 6px;
+  border: 1px solid rgba(196, 146, 42, 0.2);
+}
+
+.sidebar-rate-val {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 700;
+  color: var(--forest, #1e3a2f);
+}
+
+.sidebar-rate-val.gold {
+  color: var(--gold, #c4922a);
+}
+
+.sidebar-rate-footer {
+  font-size: 0.67rem;
+  color: var(--muted, #64748b);
+  margin-top: 0.6rem;
+  line-height: 1.5;
+}
+
+.sidebar-rate-footer a {
+  color: var(--forest, #1e3a2f);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.sidebar-rate-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Subtle Micro-Interactions
+   ========================================================================== */
+.zone-btn, .gender-btn {
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.zone-btn:active, .gender-btn:active {
+  transform: scale(0.98);
+}

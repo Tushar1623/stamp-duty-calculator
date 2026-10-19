@@ -147,6 +147,13 @@
     <div class="logo-text"><span>StampDuty</span>Calc.in</div>
   </a>
   <div class="header-right">
+    <div class="nav-state-wrap">
+      <select class="nav-state-select" onchange="if(this.value) location.href = this.value;" aria-label="Switch State / Region">
+        <option value="" selected>📍 Switch State / Region</option>
+        <option value="/">West Bengal</option>
+        <option value="/maharashtra/">Maharashtra (Mumbai, Pune, Thane)</option>
+      </select>
+    </div>
     <div class="lang-toggle" role="group" aria-label="Language / भाषा">
       <button class="lang-btn active" id="lang-en" onclick="switchLang('en')" type="button" aria-pressed="true">EN</button>
       <button class="lang-btn" id="lang-mr" onclick="switchLang('mr')" type="button" aria-pressed="false">मराठी</button>
@@ -181,13 +188,6 @@
   <div class="hero-badge" id="heroBadge">Maharashtra · 2025-2026 · Current Rates</div>
   <h1 id="heroH1">Calculate <em>Stamp Duty</em><br>&amp; Registration in Maharashtra</h1>
   <p class="hero-sub" id="heroSub">Instant, accurate calculations — Navi Mumbai, Thane, Mumbai City, Suburban &amp; all districts.</p>
-  <div class="state-selector-container">
-    <select class="state-selector" onchange="location = this.value;">
-      <option value="">📍 Switch State / Region</option>
-      <option value="/">West Bengal (Kolkata, New Town)</option>
-      <option value="/maharashtra" selected>Maharashtra</option>
-    </select>
-  </div>
   <div class="hero-pills">
     <span class="pill" id="pill1">✓ Metro Cess &amp; LBT Included</span>
     <span class="pill" id="pill2">✓ Reg. Fee Capped at ₹30,000</span>

@@ -1,0 +1,16 @@
+{
+  "name": "stamp-duty-calculator",
+  "version": "1.0.0",
+  "description": "Stamp duty & property registration charges calculator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "stamp-duty",
+    "calculator"
+  ],
+  "author": "",
+  "license": "ISC"
+}

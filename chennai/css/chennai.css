@@ -1,5 +1,8 @@
 /**
  * Chennai (Tamil Nadu) Stamp Duty Calculator - Page-Specific Stylesheet
+ * Scoped typography and font definitions for Tamil localization.
+ * Shared calculator components (.valuation-dual-grid, .notice-box, .tds-highlight-card)
+ * are provided by root style.css.
  */
 
 body.lang-ta {
@@ -12,67 +15,4 @@ body.lang-ta .card-header h2,
 body.lang-ta .result-label {
   font-family: 'Mukta Malar', sans-serif;
   letter-spacing: 0;
-}
-
-/* Two-column property input comparison grid */
-.valuation-dual-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
-}
-
-@media (max-width: 640px) {
-  .valuation-dual-grid {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-  }
-}
-
-.notice-box {
-  background: var(--gold-pale);
-  border: 1px solid rgba(194, 144, 40, 0.35);
-  border-radius: var(--radius-sm);
-  padding: 0.75rem 1rem;
-  font-size: 0.82rem;
-  color: var(--forest-dark);
-  margin: 0.75rem 0;
-  display: flex;
-  align-items: flex-start;
-  gap: 0.5rem;
-}
-
-.tds-highlight-card {
-  background: #f0fdf4;
-  border: 1px solid #bbf7d0;
-  border-radius: var(--radius-md);
-  padding: 1.25rem;
-  margin-top: 1.25rem;
-  display: none;
-}
-
-.tds-highlight-card h4 {
-  color: #166534;
-  font-size: 0.95rem;
-  margin-bottom: 0.35rem;
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.tds-highlight-card p {
-  color: #14532d;
-  font-size: 0.84rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
-}
-
-.tds-amount-badge {
-  display: inline-block;
-  background: #15803d;
-  color: #ffffff;
-  padding: 0.3rem 0.8rem;
-  border-radius: var(--radius-pill);
-  font-weight: 700;
-  font-size: 0.9rem;
 }

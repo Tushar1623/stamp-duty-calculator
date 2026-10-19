@@ -3,6 +3,7 @@
  * Executes test suites across all state and city calculation engines
  */
 
+const { runWestBengalTests } = require('./west-bengal.test.js');
 const { runChennaiTests } = require('./chennai.test.js');
 const { runBangaloreTests } = require('./bangalore.test.js');
 const { runDelhiTests } = require('./delhi.test.js');
@@ -14,6 +15,8 @@ console.log('================================================================\n'
 
 try {
   require('./nav-structure.test.js');
+  console.log('');
+  runWestBengalTests();
   console.log('');
   runChennaiTests();
   console.log('');

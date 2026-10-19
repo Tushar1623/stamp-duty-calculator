@@ -34,8 +34,8 @@ const server = http.createServer((req, res) => {
 
   let filePath = path.join(PUBLIC_DIR, reqPath);
 
-  // Security check: prevent directory traversal
-  if (!filePath.startsWith(PUBLIC_DIR)) {
+  // Security check: prevent directory traversal & block private dev paths
+  if (!filePath.startsWith(PUBLIC_DIR) || reqPath.startsWith('/tests') || reqPath === '/package.json' || reqPath === '/server.js' || reqPath.startsWith('/.git')) {
     res.writeHead(403, { 'Content-Type': 'text/plain; charset=UTF-8' });
     res.end('403 Forbidden');
     return;

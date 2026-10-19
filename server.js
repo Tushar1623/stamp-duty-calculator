@@ -25,6 +25,11 @@ const MIME_TYPES = {
 const server = http.createServer((req, res) => {
   // Parse URL safely
   let reqPath = decodeURI(req.url.split('?')[0]);
+  if (reqPath === '/west-bengal' || reqPath === '/west-bengal/') {
+    res.writeHead(301, { 'Location': '/' });
+    res.end();
+    return;
+  }
   if (reqPath === '/') reqPath = '/index.html';
 
   let filePath = path.join(PUBLIC_DIR, reqPath);

@@ -54,17 +54,17 @@ function getRates(area, gender, zone) {
 // Deeds Configuration
 const DEED = {
   sale: {
-    stampFn: (v, r) => Math.ceil(v * (r.base + r.metro + r.lbt)),
+    stampFn: (v, r) => Math.round(v * (r.base + r.metro + r.lbt)),
     regFn: getRegFee,
     regLabel: '1% (cap ₹30k)'
   },
   gift_relative: {
-    stampFn: (v) => Math.ceil(v * 0.02),
+    stampFn: (v) => Math.round(v * 0.02),
     regFn: getRegFee,
     regLabel: '1% (cap ₹30k)'
   },
   gift_other: {
-    stampFn: (v, r) => Math.ceil(v * (r.base + r.metro + r.lbt)),
+    stampFn: (v, r) => Math.round(v * (r.base + r.metro + r.lbt)),
     regFn: getRegFee,
     regLabel: '1% (cap ₹30k)'
   },

@@ -1,0 +1,5 @@
+node_modules/
+dist_public_html/
+*.zip
+.DS_Store
+Thumbs.db

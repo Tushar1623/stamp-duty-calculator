@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Regional Calculators -->
   <url>
     <loc>https://stampdutycalc.in/</loc>
     <changefreq>weekly</changefreq>
@@ -25,8 +26,68 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <url><loc>https://stampdutycalc.in/about.html</loc><priority>0.3</priority></url>
-  <url><loc>https://stampdutycalc.in/contact-us.html</loc><priority>0.3</priority></url>
-  <url><loc>https://stampdutycalc.in/privacy-policy.html</loc><priority>0.3</priority></url>
-  <url><loc>https://stampdutycalc.in/disclaimer.html</loc><priority>0.3</priority></url>
+
+  <!-- Educational Knowledge Hub & Guides -->
+  <url>
+    <loc>https://stampdutycalc.in/guides/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stampdutycalc.in/guides/west-bengal-stamp-duty-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stampdutycalc.in/guides/stamp-duty-calculation-kolkata.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stampdutycalc.in/guides/circle-rates-west-bengal.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stampdutycalc.in/guides/mutation-west-bengal.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stampdutycalc.in/guides/property-registration-documents.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stampdutycalc.in/guides/west-bengal-stamp-duty-guide-bn.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Trust, Legal & Compliance Pages -->
+  <url>
+    <loc>https://stampdutycalc.in/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://stampdutycalc.in/contact-us.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://stampdutycalc.in/privacy-policy.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://stampdutycalc.in/disclaimer.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://stampdutycalc.in/terms.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>

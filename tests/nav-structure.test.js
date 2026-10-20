@@ -12,7 +12,15 @@ const pages = [
   { file: 'about.html', name: 'About (Static)', activeUrl: null },
   { file: 'contact-us.html', name: 'Contact (Static)', activeUrl: null },
   { file: 'disclaimer.html', name: 'Disclaimer (Static)', activeUrl: null },
-  { file: 'privacy-policy.html', name: 'Privacy Policy (Static)', activeUrl: null }
+  { file: 'privacy-policy.html', name: 'Privacy Policy (Static)', activeUrl: null },
+  { file: 'terms.html', name: 'Terms of Use (Static)', activeUrl: null },
+  { file: 'guides/index.html', name: 'Guides Hub', activeUrl: null },
+  { file: 'guides/west-bengal-stamp-duty-guide.html', name: 'WB Guide', activeUrl: '/' },
+  { file: 'guides/stamp-duty-calculation-kolkata.html', name: 'Kolkata Flat Guide', activeUrl: '/' },
+  { file: 'guides/circle-rates-west-bengal.html', name: 'Circle Rate Guide', activeUrl: '/' },
+  { file: 'guides/mutation-west-bengal.html', name: 'Mutation Guide', activeUrl: '/' },
+  { file: 'guides/property-registration-documents.html', name: 'Documents Guide', activeUrl: '/' },
+  { file: 'guides/west-bengal-stamp-duty-guide-bn.html', name: 'Bengali Guide', activeUrl: '/' }
 ];
 
 const expectedLinks = [

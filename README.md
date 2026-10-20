@@ -93,24 +93,18 @@ public_html/
 
 ## 4. How to Add a New Jurisdiction
 
-To add a new state/city calculator (e.g., Hyderabad / Telangana):
+To add a new state/city calculator (e.g., Karnataka / Bengaluru):
 
-1. **Create Directory**:
-   Create `hyderabad/` with subdirectories `css/` and `js/config/`, `js/core/`, `js/ui/`.
-2. **Configure Rates**:
-   Add `hyderabad/js/config/rates-data.js` containing statutory rates, slabs, and deed exemptions.
-3. **Implement Core Engine**:
-   Add `hyderabad/js/core/calculator.js` implementing a pure computation function exportable to Node and window.
-4. **Add Translations**:
-   Add `hyderabad/js/config/i18n.js` with English and Telugu strings.
-5. **Build Page**:
-   Create `hyderabad/index.html` referencing `/style.css`, `/app-utility.js`, and the modular JS scripts.
-6. **Update Navigation**:
-   Add `<span class="nav-state-sep">|</span><a href="/hyderabad/" class="nav-state-link">Hyderabad</a>` to the navbar in all pages.
-7. **Add Unit Tests**:
-   Create `tests/hyderabad.test.js` and register it in `tests/run-tests.js`.
-8. **Update Sitemap**:
-   Add `https://stampdutycalc.in/hyderabad/` to `sitemap.xml`.
+1. **Create Calculator Module**:
+   Add `assets/js/calculators/[state].js` as a self-contained UMD module containing statutory rates, localization dictionary, pure computation engine, and UI controller (using the same pattern as `delhi.js` and `maharashtra.js`).
+2. **Create Page**:
+   Create `[state]/index.html` referencing `/assets/css/style.css`, `/assets/js/common.js`, and `/assets/js/calculators/[state].js`.
+3. **Update Navigation**:
+   Add `<span class="nav-state-sep">|</span><a href="/[state]/" class="nav-state-link">State Name</a>` to the navbar across all HTML pages.
+4. **Add Unit Tests**:
+   Create `tests/[state].test.js` importing the pure calculation engine and register it in `tests/run-tests.js`.
+5. **Update Sitemap**:
+   Add `https://stampdutycalc.in/[state]/` to `sitemap.xml`.
 
 ---
 
@@ -145,4 +139,4 @@ npm test
 2. **Redirect Preservation**:
    - `/west-bengal/` contains a meta-refresh and JS redirect to `/`, and `server.js` issues a 301 permanent redirect to protect SEO rankings.
 3. **Updating Government Rates**:
-   - When a state revenue department issues a new notification (e.g., circle rate revisions or amnesty schemes), modify only the relevant `rates-data.js` file and add/update regression tests in `tests/`. No HTML modifications required.
+   - When a state revenue department issues a new notification (e.g., circle rate revisions or amnesty schemes), modify only the relevant rates section in `assets/js/calculators/[state].js` and add/update regression tests in `tests/`. No HTML modifications required.

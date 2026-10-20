@@ -20,6 +20,10 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*)$ https://stampdutycalc.in/$1/ [L,R=301]
 
+# Legacy asset aliases for seamless backward compatibility
+RewriteRule ^style\.css$ assets/css/style.css [L]
+RewriteRule ^app-utility\.js$ assets/js/common.js [L]
+
 # ════════════════════════════════════════════════════════════
 # 2. SECURITY & ACCESS RESTRICTIONS (HOSTINGER SAFEGUARD)
 # ════════════════════════════════════════════════════════════

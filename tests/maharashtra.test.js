@@ -4,11 +4,7 @@
 
 const assert = require('assert');
 
-// Mock window for Maharashtra modules in Node environment
-global.window = {};
-require('../maharashtra/js/config/rates-data.js');
-require('../maharashtra/js/core/calculator.js');
-const { MH_CALCULATOR } = global.window;
+const { MH_CALCULATOR } = require('../assets/js/calculators/maharashtra.js');
 
 function runMaharashtraTests() {
   console.log('--- Running Maharashtra Regression Tests ---');

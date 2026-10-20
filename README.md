@@ -33,39 +33,39 @@ public_html/
 ├── contact-us.html              # Contact Us
 ├── disclaimer.html              # Legal Disclaimer
 ├── privacy-policy.html          # Privacy Policy
+├── terms.html                   # Terms of Use
 ├── sitemap.xml                  # Canonical XML Sitemap
 ├── robots.txt                   # Search Engine Directives
-├── style.css                    # Unified Design System & Shared Calculator Styles
-├── app-utility.js               # Shared Utilities (Formatting, Modals, Accordions, Share)
+├── site.webmanifest             # PWA Manifest
 │
-├── west-bengal/                 # West Bengal Calculator Module
-│   ├── index.html               # 301 Redirect to `/`
-│   └── js/
-│       ├── config/rates-data.js # WB Stamp Act Rates & Deed Rules
-│       ├── config/i18n.js       # English & Bengali Strings
-│       ├── core/calculator.js   # Pure WB Computation Engine
-│       ├── ui/ui-controller.js  # West Bengal DOM Controller
-│       └── app.js               # Application Bootstrap
+├── assets/                      # Consolidated Static Assets
+│   ├── css/
+│   │   └── style.css            # Master Design System & Scoped Regional Styles
+│   ├── js/
+│   │   ├── common.js            # Shared Utilities (Formatting, Modals, Accordions, Share)
+│   │   └── calculators/
+│   │       ├── west-bengal.js   # Unified West Bengal Calculation & UI Module
+│   │       ├── maharashtra.js   # Unified Maharashtra Calculation & UI Module
+│   │       └── delhi.js         # Unified Delhi Calculation & UI Module
+│   └── images/                  # Favicons, Touch & Android App Icons
 │
-├── maharashtra/                 # Maharashtra Calculator Module
-│   ├── index.html               # Dedicated Maharashtra Page (`/maharashtra/`)
-│   ├── css/maharashtra.css      # Marathi Typography & Scoped Widgets
-│   └── js/
-│       ├── config/rates-data.js # Mumbai, Pune, Thane Municipal Corporation/Council Rates
-│       ├── config/i18n.js       # English & Marathi Strings
-│       ├── core/calculator.js   # Maharashtra Computation Engine
-│       ├── ui/ui-controller.js  # Maharashtra DOM Controller
-│       └── app.js               # Application Bootstrap
+├── guides/                      # Comprehensive Real Estate Guides Hub
+│   ├── index.html
+│   ├── circle-rates-west-bengal.html
+│   ├── mutation-west-bengal.html
+│   ├── property-registration-documents.html
+│   ├── stamp-duty-calculation-kolkata.html
+│   ├── west-bengal-stamp-duty-guide.html
+│   └── west-bengal-stamp-duty-guide-bn.html
 │
-├── delhi/                       # Delhi (NCT) Calculator Module
-│   ├── index.html               # Dedicated Delhi Page (`/delhi/`)
-│   ├── css/delhi.css            # Hindi Typography
-│   └── js/
-│       ├── config/rates-data.js # Delhi Stamp Act + MCD Transfer Duty Rates
-│       ├── config/i18n.js       # English & Hindi Strings
-│       ├── core/calculator.js   # Delhi Computation Engine
-│       ├── ui/ui-controller.js  # Delhi DOM Controller
-│       └── app.js               # Application Bootstrap
+├── west-bengal/                 # Canonical Redirect Stub
+│   └── index.html               # 301 Redirect to `/`
+│
+├── maharashtra/                 # Dedicated Maharashtra Calculator
+│   └── index.html               # Accessible at `/maharashtra/`
+│
+├── delhi/                       # Dedicated Delhi Calculator
+│   └── index.html               # Accessible at `/delhi/`
 │
 ├── tests/                       # Headless Regression Test Suite
 │   ├── west-bengal.test.js      # West Bengal Unit Tests
@@ -75,6 +75,7 @@ public_html/
 │   └── run-tests.js             # Master Test Runner
 │
 ├── server.js                    # Local Development Server with Clean Routing
+├── .htaccess                    # Hostinger Apache Directives (Gzip, Cache, 410 Gone, Aliases)
 └── package.json                 # Project Scripts
 ```
 

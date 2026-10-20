@@ -3,7 +3,7 @@
  */
 
 const assert = require('assert');
-const { DELHI_CALCULATOR } = require('../delhi/js/core/calculator.js');
+const { DELHI_CALCULATOR } = require('../assets/js/calculators/delhi.js');
 
 function runDelhiTests() {
   console.log('--- Running Delhi (NCT) Engine Tests ---');

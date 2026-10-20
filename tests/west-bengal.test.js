@@ -4,7 +4,7 @@
  */
 
 const assert = require('assert');
-const { calculateWbStampDuty } = require('../west-bengal/js/core/calculator.js').WB_CALCULATOR;
+const { calculateWbStampDuty } = require('../assets/js/calculators/west-bengal.js').WB_CALCULATOR;
 
 function runWestBengalTests() {
   console.log('--- Running West Bengal Engine Tests ---');

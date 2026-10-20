@@ -36,6 +36,8 @@ const server = http.createServer((req, res) => {
     return;
   }
   if (reqPath === '/') reqPath = '/index.html';
+  if (reqPath === '/style.css') reqPath = '/assets/css/style.css';
+  if (reqPath === '/app-utility.js') reqPath = '/assets/js/common.js';
 
   let filePath = path.join(PUBLIC_DIR, reqPath);
 

@@ -30,6 +30,11 @@ const server = http.createServer((req, res) => {
     res.end();
     return;
   }
+  if (reqPath === '/chennai' || reqPath.startsWith('/chennai/') || reqPath === '/bangalore' || reqPath.startsWith('/bangalore/')) {
+    res.writeHead(410, { 'Content-Type': 'text/plain; charset=UTF-8' });
+    res.end('410 Gone: This regional calculator has been permanently retired.');
+    return;
+  }
   if (reqPath === '/') reqPath = '/index.html';
 
   let filePath = path.join(PUBLIC_DIR, reqPath);

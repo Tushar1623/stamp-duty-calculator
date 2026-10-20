@@ -6,8 +6,6 @@ const rootDir = path.resolve(__dirname, '..');
 const pages = [
   { file: 'index.html', name: 'West Bengal', activeUrl: '/', activeText: 'West Bengal' },
   { file: 'maharashtra/index.html', name: 'Maharashtra', activeUrl: '/maharashtra/', activeText: 'Maharashtra' },
-  { file: 'chennai/index.html', name: 'Chennai', activeUrl: '/chennai/', activeText: 'Chennai' },
-  { file: 'bangalore/index.html', name: 'Bengaluru', activeUrl: '/bangalore/', activeText: 'Bengaluru' },
   { file: 'delhi/index.html', name: 'Delhi', activeUrl: '/delhi/', activeText: 'Delhi' },
   { file: 'about.html', name: 'About (Static)', activeUrl: null },
   { file: 'contact-us.html', name: 'Contact (Static)', activeUrl: null },
@@ -26,13 +24,12 @@ const pages = [
 const expectedLinks = [
   { href: '/', text: 'West Bengal' },
   { href: '/maharashtra/', text: 'Maharashtra' },
-  { href: '/chennai/', text: 'Chennai' },
-  { href: '/bangalore/', text: 'Bengaluru' },
   { href: '/delhi/', text: 'Delhi' }
 ];
 
 console.log('================================================================');
 console.log(' StampDutyCalc.in - Navbar Structure & Active Link Verification');
+console.log(' Supported: West Bengal, Maharashtra, Delhi');
 console.log('================================================================\n');
 
 let totalPassed = 0;
@@ -62,7 +59,7 @@ for (const p of pages) {
     continue;
   }
 
-  // 3. Check all 5 links exist
+  // 3. Check all 3 links exist
   let missingLink = false;
   for (const l of expectedLinks) {
     if (!html.includes(`href="${l.href}"`) || !html.includes(`>${l.text}</a>`)) {
@@ -73,7 +70,14 @@ for (const p of pages) {
   }
   if (missingLink) continue;
 
-  // 4. Check active link
+  // 4. Ensure no deleted jurisdiction links remain
+  if (html.includes('href="/chennai/"') || html.includes('href="/bangalore/"')) {
+    console.error(`✗ FAIL: ${p.file} still contains removed links (Chennai or Bengaluru)`);
+    totalFailed++;
+    continue;
+  }
+
+  // 5. Check active link
   if (p.activeUrl) {
     const activeRegex = new RegExp(`href="${p.activeUrl}"[^>]*class="[^"]*active[^"]*"[^>]*aria-current="page"`);
     const activeRegexAlt = new RegExp(`class="[^"]*active[^"]*"[^>]*href="${p.activeUrl}"[^>]*aria-current="page"`);
@@ -96,7 +100,7 @@ for (const p of pages) {
   totalPassed++;
 }
 
-// 5. Verify CSS rules in style.css
+// 6. Verify CSS rules in style.css
 const cssContent = fs.readFileSync(path.join(rootDir, 'style.css'), 'utf8');
 const requiredCssSelectors = [
   '.nav-state-bar',

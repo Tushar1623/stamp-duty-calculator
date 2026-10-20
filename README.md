@@ -1,11 +1,9 @@
 # StampDutyCalc.in — Multi-Jurisdiction Property Stamp Duty & Registration Calculator
 
-A lightweight, zero-framework, SEO-optimized web application for calculating property stamp duty, registration fees, municipal cesses, and statutory government charges across five major Indian real estate jurisdictions:
+A lightweight, zero-framework, SEO-optimized web application for calculating property stamp duty, registration fees, municipal cesses, and statutory government charges across three major Indian real estate jurisdictions:
 1. **West Bengal** (`/`)
 2. **Maharashtra** (`/maharashtra/`)
-3. **Chennai (Tamil Nadu)** (`/chennai/`)
-4. **Bengaluru (Karnataka)** (`/bangalore/`)
-5. **Delhi (NCT / MCD)** (`/delhi/`)
+3. **Delhi (NCT / MCD)** (`/delhi/`)
 
 Live website: [https://stampdutycalc.in/](https://stampdutycalc.in/)  
 Repository: [https://github.com/Tushar1623/stamp-duty-calculator](https://github.com/Tushar1623/stamp-duty-calculator)
@@ -59,26 +57,6 @@ public_html/
 │       ├── ui/ui-controller.js  # Maharashtra DOM Controller
 │       └── app.js               # Application Bootstrap
 │
-├── chennai/                     # Chennai (Tamil Nadu) Calculator Module
-│   ├── index.html               # Dedicated Chennai Page (`/chennai/`)
-│   ├── css/chennai.css          # Tamil Typography
-│   └── js/
-│       ├── config/rates-data.js # TN Stamp Act & Registration Department Rates
-│       ├── config/i18n.js       # English & Tamil Strings
-│       ├── core/calculator.js   # Chennai Computation Engine
-│       ├── ui/ui-controller.js  # Chennai DOM Controller
-│       └── app.js               # Application Bootstrap
-│
-├── bangalore/                   # Bengaluru (Karnataka) Calculator Module
-│   ├── index.html               # Dedicated Bengaluru Page (`/bangalore/`)
-│   ├── css/bangalore.css        # Kannada Typography
-│   └── js/
-│       ├── config/rates-data.js # Karnataka Slabs (2%, 3%, 5%), Cesses & Sur.
-│       ├── config/i18n.js       # English & Kannada Strings
-│       ├── core/calculator.js   # Bengaluru Computation Engine
-│       ├── ui/ui-controller.js  # Bengaluru DOM Controller
-│       └── app.js               # Application Bootstrap
-│
 ├── delhi/                       # Delhi (NCT) Calculator Module
 │   ├── index.html               # Dedicated Delhi Page (`/delhi/`)
 │   ├── css/delhi.css            # Hindi Typography
@@ -92,8 +70,6 @@ public_html/
 ├── tests/                       # Headless Regression Test Suite
 │   ├── west-bengal.test.js      # West Bengal Unit Tests
 │   ├── maharashtra.test.js      # Maharashtra Unit Tests
-│   ├── chennai.test.js          # Chennai Unit Tests
-│   ├── bangalore.test.js        # Bengaluru Unit Tests
 │   ├── delhi.test.js            # Delhi Unit Tests
 │   ├── nav-structure.test.js    # Navbar Structure & Active State Tests
 │   └── run-tests.js             # Master Test Runner
@@ -110,8 +86,6 @@ public_html/
 | :--- | :--- | :--- |
 | **West Bengal** | `/` | **Urban**: 6% duty (7% for > ₹1 Cr). **Rural**: 5% duty (6% for > ₹1 Cr). **Women Buyer Rebate**: 1% concession. **Reg Fee**: 1.1% uncapped. **Gift (Blood Relative)**: 0.5% flat duty, exempt from surcharge. **General POA**: ₹1,000 duty + ₹200 reg. |
 | **Maharashtra** | `/maharashtra/` | **Municipal Corp**: 5% base + 1% Metro Cess + 1% LBT (7% total in Mumbai/Pune/Thane). **Council**: 6%. **Rural**: 5%. **Female Rebate**: 1% on residential property. **Reg Fee**: 1% capped at ₹30,000 for properties > ₹30L. |
-| **Chennai (TN)** | `/chennai/` | Higher of Agreement Value vs Guideline Value. **Sale Deed**: 7% duty + 4% reg fee (11% total). **Female Concession**: 3% reg fee for properties ≤ ₹10L. **Family Gift**: 1% duty (capped at ₹40k) + 1% reg fee (capped at ₹10k) = ₹50k max. **TDS**: 1% Section 194-IA alert for ≥ ₹50L. |
-| **Bengaluru (KA)** | `/bangalore/` | Higher of Agreement Value vs Guidance Value. **Slab 1 (≤ ₹20L)**: 2% base + 10% cess + 2% surcharge = 2.24% duty + 2% reg = 4.24%. **Slab 2 (₹20L–₹45L)**: 3% base + cesses = 3.36% duty + 2% reg = 5.36%. **Slab 3 (> ₹45L)**: 5% base + cesses = 5.60% duty + 2% reg = 7.60%. **Family Gift**: Fixed ₹5,600 duty in BBMP, ₹3,360 in Panchayat. |
 | **Delhi (NCT)** | `/delhi/` | Higher of Agreement Value vs Circle Rate. **Base Duty**: 3% (Female) or 4% (Male/Joint). **MCD Transfer Duty**: 2% (Female) or 3% (Male/Joint) for ≤ ₹25L; 3% (Female) or 4% (Male/Joint) for > ₹25L. **NDMC/Cantonment**: MCD duty exempt. **Reg Fee**: 1% flat. |
 
 ---
@@ -151,7 +125,7 @@ node server.js
 The server will start at `http://localhost:3000/`.
 
 ### Running Tests
-Execute the comprehensive test suite across all 5 jurisdictions and navbar structure:
+Execute the comprehensive test suite across all 3 jurisdictions and navbar structure:
 ```bash
 node tests/run-tests.js
 ```

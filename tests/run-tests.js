@@ -1,26 +1,21 @@
 /**
  * Master Test Runner for StampDutyCalc.in
- * Executes test suites across all state and city calculation engines
+ * Executes test suites across all supported calculation engines (West Bengal, Maharashtra, Delhi)
  */
 
 const { runWestBengalTests } = require('./west-bengal.test.js');
-const { runChennaiTests } = require('./chennai.test.js');
-const { runBangaloreTests } = require('./bangalore.test.js');
 const { runDelhiTests } = require('./delhi.test.js');
 const { runMaharashtraTests } = require('./maharashtra.test.js');
 
 console.log('================================================================');
 console.log(' StampDutyCalc.in - Multi-Jurisdiction Engine Test Suite');
+console.log(' Supported: West Bengal, Maharashtra, Delhi (NCT)');
 console.log('================================================================\n');
 
 try {
   require('./nav-structure.test.js');
   console.log('');
   runWestBengalTests();
-  console.log('');
-  runChennaiTests();
-  console.log('');
-  runBangaloreTests();
   console.log('');
   runDelhiTests();
   console.log('');

@@ -12,7 +12,10 @@ RewriteRule ^(.*)$ https://stampdutycalc.in/$1 [L,R=301]
 # 301 Redirect /west-bengal or /west-bengal/ to canonical root /
 RewriteRule ^west-bengal/?$ https://stampdutycalc.in/ [L,R=301]
 
-# Ensure trailing slash on directory URLs (e.g., /chennai -> /chennai/)
+# 410 Gone for Permanently Removed Jurisdictions (Chennai & Bengaluru)
+RewriteRule ^(chennai|bangalore)(/.*)?$ - [G,L,NC]
+
+# Ensure trailing slash on directory URLs (e.g., /maharashtra -> /maharashtra/)
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*)$ https://stampdutycalc.in/$1/ [L,R=301]

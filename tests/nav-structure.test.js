@@ -137,7 +137,21 @@ for (const p of pages) {
     }
   }
 
-  console.log(`✓ PASS: ${p.name} (${p.file}) has verified horizontal nav bar, About/Contact common nav, and correct active states`);
+  // 5c. Check common language selector (lang-toggle)
+  if (!html.includes('class="lang-toggle"') || !html.includes('class="lang-btn')) {
+    console.error(`✗ FAIL: ${p.file} missing language toggle component in header`);
+    totalFailed++;
+    continue;
+  }
+
+  // 5d. Check common Calculate Now button (header-cta)
+  if (!html.includes('header-cta') || !html.includes('Calculate Now')) {
+    console.error(`✗ FAIL: ${p.file} missing Calculate Now button in header`);
+    totalFailed++;
+    continue;
+  }
+
+  console.log(`✓ PASS: ${p.name} (${p.file}) has verified horizontal nav bar, About/Contact, Language Selector & Calculate Now`);
   totalPassed++;
 }
 

@@ -288,3 +288,51 @@ function initSidebarListeners(stateName, waNumber) {
     }, 800);
   };
 }
+
+
+/**
+ * Global Language Switcher Fallback & Persistence
+ * Ensures EN/বাংলা switching works gracefully across all pages.
+ */
+if (typeof window.switchLang !== 'function') {
+  window.switchLang = function (lang) {
+    const enBtn = document.getElementById('lang-en');
+    const bnBtn = document.getElementById('lang-bn');
+    if (enBtn && bnBtn) {
+      enBtn.classList.toggle('active', lang === 'en');
+      bnBtn.classList.toggle('active', lang === 'bn');
+      enBtn.setAttribute('aria-pressed', lang === 'en');
+      bnBtn.setAttribute('aria-pressed', lang === 'bn');
+    }
+
+    try {
+      localStorage.setItem('wb_lang', lang);
+      localStorage.setItem('stampduty_lang', lang);
+    } catch (e) {}
+
+    // Dedicated translation route check for West Bengal guides
+    const path = window.location.pathname;
+    if (lang === 'bn' && path.includes('/guides/west-bengal-stamp-duty-guide.html')) {
+      window.location.href = '/guides/west-bengal-stamp-duty-guide-bn.html';
+    } else if (lang === 'en' && path.includes('/guides/west-bengal-stamp-duty-guide-bn.html')) {
+      window.location.href = '/guides/west-bengal-stamp-duty-guide.html';
+    }
+  };
+}
+
+// Auto-restore saved language state on non-calculator pages
+document.addEventListener('DOMContentLoaded', function () {
+  try {
+    const saved = localStorage.getItem('wb_lang') || localStorage.getItem('stampduty_lang');
+    if (saved && typeof window.switchLang === 'function') {
+      const enBtn = document.getElementById('lang-en');
+      const bnBtn = document.getElementById('lang-bn');
+      if (enBtn && bnBtn && !document.getElementById('calculator')) {
+        enBtn.classList.toggle('active', saved === 'en');
+        bnBtn.classList.toggle('active', saved === 'bn');
+        enBtn.setAttribute('aria-pressed', saved === 'en');
+        bnBtn.setAttribute('aria-pressed', saved === 'bn');
+      }
+    }
+  } catch (e) {}
+});

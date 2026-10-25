@@ -72,6 +72,8 @@ for (const slug of expectedArticles) {
   assert(content.includes('href="/blogs/" class="nav-state-link active">Blogs</a>'), `${slug} has active Blogs nav link`);
   assert(content.includes('href="/about.html" class="nav-main-link">About</a>'), `${slug} has About link`);
   assert(content.includes('href="/contact-us.html" class="nav-main-link">Contact</a>'), `${slug} has Contact link`);
+  assert(content.includes('class="lang-toggle"') && content.includes('id="lang-en"') && content.includes('id="lang-bn"'), `${slug} has language toggle`);
+  assert(content.includes('class="header-cta"') && content.includes('Calculate Now'), `${slug} has Calculate Now button`);
 
   // Verify Common Breadcrumb & Content integrity
   assert(content.includes('<nav class="breadcrumb-nav"'), `${slug} has breadcrumb nav`);
@@ -91,6 +93,8 @@ if (fs.existsSync(blogsIndexPath)) {
   assert(blogsIndex.includes('Stamp Duty &amp; Property <em>Guides</em>') || blogsIndex.includes('Stamp Duty &amp; Property Guides'), 'Blogs hub has correct H1');
   assert(blogsIndex.includes('id="blogSearchInput"'), 'Blogs hub has client-side search input');
   assert(blogsIndex.includes('id="blogEmptyState"'), 'Blogs hub has zero results empty state');
+  assert(blogsIndex.includes('class="lang-toggle"') && blogsIndex.includes('id="lang-en"') && blogsIndex.includes('id="lang-bn"'), 'Blogs hub has language toggle');
+  assert(blogsIndex.includes('class="header-cta"') && blogsIndex.includes('Calculate Now'), 'Blogs hub has Calculate Now button');
 
   // Verify all 15 cards present
   for (const slug of expectedArticles) {

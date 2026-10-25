@@ -15,6 +15,8 @@ console.log('================================================================\n'
 try {
   require('./nav-structure.test.js');
   console.log('');
+  require('./blog-verification.test.js');
+  console.log('');
   runWestBengalTests();
   console.log('');
   runDelhiTests();

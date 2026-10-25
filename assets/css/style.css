@@ -3375,6 +3375,79 @@ footer a:hover {
   background: var(--cream);
 }
 
+/* Inline code tag styling */
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.88em;
+  background: var(--cream);
+  color: var(--forest);
+  padding: 0.15rem 0.35rem;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border);
+}
+
+/* Related articles section */
+.related-articles-section {
+  margin-top: 3.5rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--border);
+}
+
+.related-articles-title {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--forest-dark);
+  margin-bottom: 1.25rem;
+}
+
+.related-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.related-article-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+}
+
+.related-article-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--forest-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.related-article-card h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--forest-dark);
+  line-height: 1.35;
+  margin-bottom: 0.5rem;
+}
+
+.related-article-card p {
+  font-size: 0.82rem;
+  color: var(--ink-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  flex: 1;
+}
+
+.related-article-card .read-link {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
 .lang-switch-banner {
   background: #fdf8eb;
   border: 1px solid #f9e2af;

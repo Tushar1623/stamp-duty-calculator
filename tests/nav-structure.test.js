@@ -7,6 +7,7 @@ const pages = [
   { file: 'index.html', name: 'West Bengal', activeUrl: '/', activeText: 'West Bengal' },
   { file: 'maharashtra/index.html', name: 'Maharashtra', activeUrl: '/maharashtra/', activeText: 'Maharashtra' },
   { file: 'delhi/index.html', name: 'Delhi', activeUrl: '/delhi/', activeText: 'Delhi' },
+  { file: 'blogs/index.html', name: 'Blogs Landing Page', activeUrl: '/blogs/', activeText: 'Blogs' },
   { file: 'about.html', name: 'About (Static)', activeUrl: null },
   { file: 'contact-us.html', name: 'Contact (Static)', activeUrl: null },
   { file: 'disclaimer.html', name: 'Disclaimer (Static)', activeUrl: null },
@@ -24,12 +25,13 @@ const pages = [
 const expectedLinks = [
   { href: '/', text: 'West Bengal' },
   { href: '/maharashtra/', text: 'Maharashtra' },
-  { href: '/delhi/', text: 'Delhi' }
+  { href: '/delhi/', text: 'Delhi' },
+  { href: '/blogs/', text: 'Blogs' }
 ];
 
 console.log('================================================================');
 console.log(' StampDutyCalc.in - Navbar Structure & Active Link Verification');
-console.log(' Supported: West Bengal, Maharashtra, Delhi');
+console.log(' Supported: West Bengal, Maharashtra, Delhi, Blogs');
 console.log('================================================================\n');
 
 let totalPassed = 0;

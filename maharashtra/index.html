@@ -165,13 +165,17 @@
     <a href="/blogs/" class="nav-state-link">Blogs</a>
   </nav>
     <div class="header-right">
+      <nav class="nav-main-links" aria-label="Main Navigation">
+        <a href="/about.html" class="nav-main-link">About</a>
+        <a href="/contact-us.html" class="nav-main-link">Contact</a>
+      </nav>
       <div class="lang-toggle" role="group" aria-label="Language / भाषा">
         <button class="lang-btn active" id="lang-en" onclick="switchLang('en')" type="button"
           aria-pressed="true">EN</button>
         <button class="lang-btn" id="lang-mr" onclick="switchLang('mr')" type="button"
           aria-pressed="false">मराठी</button>
       </div>
-      <a href="/guides/" class="nav-main-link">Guides</a>
+      
       <button class="header-cta" id="headerCta"
         onclick="g('calc-card').scrollIntoView({behavior:'smooth'});g('propertyValue').focus();">
         Calculate Now ↓

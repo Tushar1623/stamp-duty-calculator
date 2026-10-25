@@ -2513,6 +2513,15 @@ footer a:hover {
     gap: 0.45rem;
   }
 
+  .nav-main-links {
+    gap: 0.25rem;
+  }
+
+  .nav-main-link {
+    font-size: 0.78rem;
+    padding: 0.25rem 0.45rem;
+  }
+
   .lang-btn {
     padding: 0.25rem 0.5rem;
     font-size: 0.72rem;
@@ -2806,7 +2815,13 @@ footer a:hover {
   background: rgba(255, 255, 255, 0.12);
 }
 
-.nav-main-link.active {
+.nav-main-link:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.nav-main-link.active,
+.nav-main-link[aria-current="page"] {
   color: var(--gold-light);
   background: rgba(229, 180, 72, 0.18);
   font-weight: 700;

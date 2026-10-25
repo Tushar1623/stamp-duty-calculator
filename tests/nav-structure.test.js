@@ -98,7 +98,46 @@ for (const p of pages) {
     }
   }
 
-  console.log(`✓ PASS: ${p.name} (${p.file}) has verified horizontal nav bar and correct active state`);
+  // 5b. Check common nav-main-links (About & Contact)
+  if (!html.includes('<nav class="nav-main-links" aria-label="Main Navigation">')) {
+    console.error(`✗ FAIL: ${p.file} missing <nav class="nav-main-links"> element`);
+    totalFailed++;
+    continue;
+  }
+  if (!html.includes('href="/about.html"') || !html.includes('>About</a>')) {
+    console.error(`✗ FAIL: ${p.file} missing link for About (/about.html)`);
+    totalFailed++;
+    continue;
+  }
+  if (!html.includes('href="/contact-us.html"') || !html.includes('>Contact</a>')) {
+    console.error(`✗ FAIL: ${p.file} missing link for Contact (/contact-us.html)`);
+    totalFailed++;
+    continue;
+  }
+
+  // Check active states for About and Contact
+  if (p.file === 'about.html') {
+    if (!html.includes('href="/about.html" class="nav-main-link active" aria-current="page"')) {
+      console.error(`✗ FAIL: about.html does not have active state on About link`);
+      totalFailed++;
+      continue;
+    }
+  } else if (p.file === 'contact-us.html') {
+    if (!html.includes('href="/contact-us.html" class="nav-main-link active" aria-current="page"')) {
+      console.error(`✗ FAIL: contact-us.html does not have active state on Contact link`);
+      totalFailed++;
+      continue;
+    }
+  } else {
+    // Non-about/contact pages: neither About nor Contact should be active
+    if (html.includes('href="/about.html" class="nav-main-link active"') || html.includes('href="/contact-us.html" class="nav-main-link active"')) {
+      console.error(`✗ FAIL: ${p.file} unexpectedly has active state on About or Contact`);
+      totalFailed++;
+      continue;
+    }
+  }
+
+  console.log(`✓ PASS: ${p.name} (${p.file}) has verified horizontal nav bar, About/Contact common nav, and correct active states`);
   totalPassed++;
 }
 
